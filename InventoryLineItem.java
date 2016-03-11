@@ -23,27 +23,27 @@ public class InventoryLineItem
     {
         if (_lineItemQty >= 50)
         {
-            _lineItemDiscountRate = 0.25;
+            _lineItemDiscountRate = 0.75;
 
         } else if (_lineItemQty >= 25)
         {
-            _lineItemDiscountRate = 0.20;
+            _lineItemDiscountRate = 0.80;
 
         } else if (_lineItemQty >= 10)
         {
-            _lineItemDiscountRate = 0.10;
+            _lineItemDiscountRate = 0.90;
         }
 
         else
         {
-            _lineItemDiscountRate = 0.0;
+            _lineItemDiscountRate = 1;
         }
 
     }
 
     public void setLineItemSubtotal()
     {
-        this._lineItemSubtotal = this.getLineItemQty() * Product.getProductPrice() * this.getLineItemDiscountRate();
+        _lineItemSubtotal = _lineItemQty * Product.getProductPrice() * _lineItemDiscountRate;
     }
 
     public int getLineItemNum()
@@ -86,18 +86,25 @@ public class InventoryLineItem
     public static void main(String[] args)
     {
         CD myCD = new CD("id", "Classical", 24.99, "mozart");
+        Book myBook = new Book("theId", "aBook", 52.99, "BookTitleWow", "AwesomeAuthor");
+        InventoryLineItem myILI = new InventoryLineItem(myCD, 25);
+        InventoryLineItem myILI2 = new InventoryLineItem(myBook, 50);
         //CD myCD2 = new CD("id", "Classical2", 29.99, "mozart2");
         System.out.println(myCD.getProductDesc());
         System.out.println(myCD.getProductPrice());
         System.out.println(myCD.getProductID());
         System.out.println(myCD.getCDTitle());
-        InventoryLineItem myILI = new InventoryLineItem(myCD, 25);
+        //InventoryLineItem myILI = new InventoryLineItem(myCD, 25);
         //InventoryLineItem myILI2 = new InventoryLineItem(myCD2, 250);
         myILI.setLineItemSubtotal();
         myILI.setLineItemDiscountRate();
+        myILI2.setLineItemDiscountRate();
         System.out.println(myILI.getLineItemDiscountRate());
         System.out.println(myILI.toString());
+        System.out.println(myILI2.toString());
         System.out.println(myILI.getLineItemSubtotal());
+
+
 
 
 
