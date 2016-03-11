@@ -15,36 +15,35 @@ public class InventoryLineItem
     {
         InventoryLineItem.instanceCounter++;
         _lineItemNum = instanceCounter;
-        //this._lineItemNum = _lineItemNum;
         this._product = product;
         this._lineItemQty = lineItemQty;
     }
 
     public void setLineItemDiscountRate()
     {
-        if (_lineItemQty >= 0)
+        if (_lineItemQty >= 50)
         {
-            _lineItemDiscountRate = 0.0;
-
-        } else if (_lineItemQty >= 10)
-        {
-            _lineItemDiscountRate = 0.10;
+            _lineItemDiscountRate = 0.25;
 
         } else if (_lineItemQty >= 25)
         {
             _lineItemDiscountRate = 0.20;
+
+        } else if (_lineItemQty >= 10)
+        {
+            _lineItemDiscountRate = 0.10;
         }
 
         else
         {
-            _lineItemDiscountRate = .25;
+            _lineItemDiscountRate = 0.0;
         }
 
     }
 
     public void setLineItemSubtotal()
     {
-        _lineItemSubtotal = _lineItemQty * this.getProductPrice() * this.getLineItemDiscountRate();
+        _lineItemSubtotal = _lineItemQty * this.getLineItemDiscountRate();
     }
 
     public int getLineItemNum()
@@ -95,7 +94,7 @@ public class InventoryLineItem
         InventoryLineItem myILI = new InventoryLineItem(myCD, 25);
         InventoryLineItem myILI2 = new InventoryLineItem(myCD2, 250);
         myILI.setLineItemDiscountRate();
-        System.out.println(myILI._lineItemDiscountRate);
+        System.out.println(myILI.getLineItemDiscountRate());
         System.out.println(myILI.toString());
 
 
