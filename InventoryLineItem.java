@@ -28,11 +28,11 @@ public class InventoryLineItem
 
         } else if (_lineItemSubtotal >= 25)
         {
-            _lineItemDiscountRate = 0.2;
+            _lineItemDiscountRate = 0.20;
 
         } else if (_lineItemSubtotal >= 10)
         {
-            _lineItemDiscountRate = 0.1;
+            _lineItemDiscountRate = 0.10;
         }
 
         else
