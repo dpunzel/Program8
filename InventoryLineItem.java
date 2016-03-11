@@ -22,32 +22,29 @@ public class InventoryLineItem
 
     public void setLineItemDiscountRate()
     {
-        if (_lineItemSubtotal >= 50)
+        if (_lineItemSubtotal >= 0)
         {
-            _lineItemDiscountRate = 0.25;
-
-        } else if (_lineItemSubtotal >= 25)
-        {
-            _lineItemDiscountRate = 0.20;
+            _lineItemDiscountRate = 0.0;
 
         } else if (_lineItemSubtotal >= 10)
         {
             _lineItemDiscountRate = 0.10;
+
+        } else if (_lineItemSubtotal >= 25)
+        {
+            _lineItemDiscountRate = 0.20;
         }
 
         else
         {
-            _lineItemDiscountRate = 0;
+            _lineItemDiscountRate = .25;
         }
 
     }
 
-    public void setLineItemSubtotal(double _lineItemSubtotal)
+    public void setLineItemSubtotal()
     {
-        // make a change here later
 
-        //return discountRate * unitCost * qty;
-        this._lineItemSubtotal = _lineItemSubtotal;
     }
 
     public int getLineItemNum()
