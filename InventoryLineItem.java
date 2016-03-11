@@ -43,7 +43,7 @@ public class InventoryLineItem
 
     public void setLineItemSubtotal()
     {
-        _lineItemSubtotal = _lineItemQty * getProduct().getProductPrice() * _lineItemDiscountRate;
+        _lineItemSubtotal = _lineItemQty * Product.getProductPrice() * _lineItemDiscountRate;
     }
 
     public int getLineItemNum()
