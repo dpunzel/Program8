@@ -5,7 +5,7 @@ public class Product
 {
     private String _productID;
     private String _productDesc;
-    private double _productPrice;
+    private static double _productPrice;
 
     public Product()
     {
@@ -15,7 +15,7 @@ public class Product
     {
         this._productID = id;
         this._productDesc = desc;
-        this._productPrice = price;
+        _productPrice = price;
     }
 
     public String getProductID() {
@@ -26,7 +26,7 @@ public class Product
         return _productDesc;
     }
 
-    public double getProductPrice() {
+    public static double getProductPrice() {
         return _productPrice;
     }
 

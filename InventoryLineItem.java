@@ -43,7 +43,7 @@ public class InventoryLineItem
 
     public void setLineItemSubtotal()
     {
-        _lineItemSubtotal = _lineItemQty * this.getLineItemDiscountRate();
+        this._lineItemSubtotal = this.getLineItemQty() * Product.getProductPrice() * this.getLineItemDiscountRate();
     }
 
     public int getLineItemNum()
@@ -86,16 +86,18 @@ public class InventoryLineItem
     public static void main(String[] args)
     {
         CD myCD = new CD("id", "Classical", 24.99, "mozart");
-        CD myCD2 = new CD("id", "Classical2", 29.99, "mozart2");
+        //CD myCD2 = new CD("id", "Classical2", 29.99, "mozart2");
         System.out.println(myCD.getProductDesc());
-        System.out.println(myCD2.getProductPrice());
+        System.out.println(myCD.getProductPrice());
         System.out.println(myCD.getProductID());
         System.out.println(myCD.getCDTitle());
         InventoryLineItem myILI = new InventoryLineItem(myCD, 25);
-        InventoryLineItem myILI2 = new InventoryLineItem(myCD2, 250);
+        //InventoryLineItem myILI2 = new InventoryLineItem(myCD2, 250);
+        myILI.setLineItemSubtotal();
         myILI.setLineItemDiscountRate();
         System.out.println(myILI.getLineItemDiscountRate());
         System.out.println(myILI.toString());
+        System.out.println(myILI.getLineItemSubtotal());
 
 
 
