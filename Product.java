@@ -5,7 +5,7 @@ public class Product
 {
     private String _productID;
     private String _productDesc;
-    private static double _productPrice;
+    private double _productPrice;
 
     public Product()
     {
@@ -26,7 +26,7 @@ public class Product
         return _productDesc;
     }
 
-    public static double getProductPrice() {
+    public double getProductPrice() {
         return _productPrice;
     }
 
