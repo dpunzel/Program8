@@ -6,11 +6,11 @@ public class Book extends Product
     private String _bookTitle;
     private String _bookAuthor;
 
-    public Book(String id, String desc, double price, String _bookTitle, String _bookAuthor)
+    public Book(String id, String desc, double price, String title, String author)
     {
         super(id, desc, price);
-        this._bookTitle = _bookTitle;
-        this._bookAuthor = _bookAuthor;
+        this._bookTitle = title;
+        this._bookAuthor = author;
     }
 
     public String getBookTitle()
@@ -26,8 +26,8 @@ public class Book extends Product
     @Override
     public String toString() {
         return "Book{" +
-                "_bookTitle='" + _bookTitle + '\'' +
-                ", _bookAuthor='" + _bookAuthor + '\'' +
+                "Title='" + _bookTitle + '\'' +
+                ", Author='" + _bookAuthor + '\'' +
                 '}';
     }
 }

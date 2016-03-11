@@ -6,10 +6,10 @@ public class CD extends Product
     private String _cdTitle;
 
 
-    public CD(String id, String desc, double price, String _cdTitle)
+    public CD(String id, String desc, double price, String title)
     {
         super(id, desc, price);
-        this._cdTitle = _cdTitle;
+        this._cdTitle = title;
     }
 
     public String getCDTitle()
@@ -21,7 +21,7 @@ public class CD extends Product
     public String toString()
     {
         return "CD{" +
-                "_cdTitle='" + _cdTitle + '\'' +
+                "Title='" + _cdTitle + '\'' +
                 '}';
     }
 }

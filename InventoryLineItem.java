@@ -87,15 +87,16 @@ public class InventoryLineItem
 
     public static void main(String[] args)
     {
-        CD myCD = new CD("id", "Classical", 24.99, "mozart");
-        //Book myBook = new Book("theId", "aBook", 52.99, "BookTitleWow", "AwesomeAuthor");
-        InventoryLineItem myILI = new InventoryLineItem(myCD, 49);
+        //CD myCD = new CD("id", "Classical", 24.99, "mozart");
+        Book myBook = new Book("theId", "aBook", 10.00, "BookTitleWow", "AwesomeAuthor");
+        InventoryLineItem myILI = new InventoryLineItem(myBook, 5);
         //InventoryLineItem myILI2 = new InventoryLineItem(myBook, 50);
         //CD myCD2 = new CD("id", "Classical2", 29.99, "mozart2");
-        System.out.println(myCD.getProductDesc());
-        System.out.println(myCD.getProductPrice());
-        System.out.println(myCD.getProductID());
-        System.out.println(myCD.getCDTitle());
+        System.out.println(myBook.getProductDesc());
+        System.out.println(myBook.getProductPrice());
+        System.out.println(myBook.getProductID());
+        System.out.println(myBook.getBookTitle());
+        System.out.println(myBook.getBookAuthor());
         //InventoryLineItem myILI = new InventoryLineItem(myCD, 25);
         //InventoryLineItem myILI2 = new InventoryLineItem(myCD2, 250);
         myILI.setLineItemSubtotal();
