@@ -12,8 +12,8 @@ public class ProductTest
     public static final double EXPECTED_PRICE = 24.99;
     public static final String EXPECTED_TITLE = "Mozart";
 
-    private CD _cd1;// = new CD(EXPECTED_ID, EXPECTED_DESC, EXPECTED_PRICE, EXPECTED_TITLE);
-    private CD _cd2;// = new CD("", "",0.0 , "");
+    private CD _cd1;
+    private CD _cd2;
 
     @Before
     public void initialize()
@@ -32,11 +32,6 @@ public class ProductTest
         this.testGetProductPrice();
 
     }
-//
-//    @Before
-//    public void setUp() throws Exception {
-//
-//    }
 
     @Test
     public void testGetProductID() throws Exception
