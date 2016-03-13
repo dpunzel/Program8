@@ -11,6 +11,10 @@ public class InventoryLineItem
     private double _lineItemSubtotal;
 
 
+    /**
+     * @param product
+     * @param lineItemQty
+     */
     public InventoryLineItem(Product product, int lineItemQty)
     {
         InventoryLineItem._instanceCounter++;
@@ -21,28 +25,30 @@ public class InventoryLineItem
         this.setLineItemSubtotal();
     }
 
+    /**
+     *
+     */
     public void setLineItemDiscountRate()
     {
         if (_lineItemQty >= 50)
         {
             _lineItemDiscountRate = 0.75;
-
         } else if (_lineItemQty >= 25)
         {
             _lineItemDiscountRate = 0.80;
-
         } else if (_lineItemQty >= 10)
         {
             _lineItemDiscountRate = 0.90;
         }
-
         else
         {
             _lineItemDiscountRate = 1;
         }
-
     }
 
+    /**
+     *
+     */
     public void setLineItemSubtotal()
     {
         _lineItemSubtotal = _lineItemQty * getProduct().getProductPrice() * _lineItemDiscountRate;
@@ -89,7 +95,7 @@ public class InventoryLineItem
     {
         //CD myCD = new CD("id", "Classical", 24.99, "mozart");
         Book myBook = new Book("theId", "aBook", 10.00, "BookTitleWow", "AwesomeAuthor");
-        InventoryLineItem myILI = new InventoryLineItem(myBook, 5);
+        InventoryLineItem myILI = new InventoryLineItem(myBook, 30);
         //InventoryLineItem myILI2 = new InventoryLineItem(myBook, 50);
         //CD myCD2 = new CD("id", "Classical2", 29.99, "mozart2");
         System.out.println(myBook.getProductDesc());
